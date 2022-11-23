@@ -1,7 +1,11 @@
 .container {
-  border: blue 3px solid;
-  margin: 5px;
+  border: #ddd 1px solid;
+  margin: 50px 10px 25px 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #eee;
 }
 .cardDiv {
   display: flex;
+  justify-content: center;
 }

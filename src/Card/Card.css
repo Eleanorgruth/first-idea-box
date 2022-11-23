@@ -1,4 +1,8 @@
 article {
-  border: green 2px solid;
+  border: #ddd 1px solid;
   margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #ffffff;
+
 }

@@ -5,14 +5,14 @@ import Card from "../Card/Card";
 
 //functional component
 const IdeaContainer = ({ideas, deleteIdea}) => {
-  const ideaCards = ideas.map((idea) => {
+  const ideaCards = ideas.map((idea, i) => {
     return (
       <Card
         movie={idea.movie}
         quote={idea.quote}
         character={idea.character}
         id={idea.id}
-        key={idea.id}
+        key={i}
         deleteIdea={deleteIdea}
       />
     )
