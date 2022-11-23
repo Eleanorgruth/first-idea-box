@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 
 
 //functional component
-const IdeaContainer = ({ideas, name}) => {
+const IdeaContainer = ({ideas, deleteIdea}) => {
   const ideaCards = ideas.map((idea) => {
     return (
       <Card
@@ -13,14 +13,16 @@ const IdeaContainer = ({ideas, name}) => {
         character={idea.character}
         id={idea.id}
         key={idea.id}
+        deleteIdea={deleteIdea}
       />
     )
   })
     return (
       <section className="container">
-        <h1>Snowman Idea Container</h1>
-        <h1>{name}</h1>
-        {ideaCards}
+        <h1>Idea Container</h1>
+        <div className="cardDiv">
+          {ideaCards}
+        </div>
       </section>
     )
 }

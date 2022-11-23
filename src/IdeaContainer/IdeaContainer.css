@@ -2,3 +2,6 @@
   border: blue 3px solid;
   margin: 5px;
 }
+.cardDiv {
+  display: flex;
+}

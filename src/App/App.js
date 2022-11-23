@@ -1,6 +1,7 @@
 import './App.css';
 import React, { Component } from 'react';
 import IdeaContainer from '../IdeaContainer/IdeaContainer'
+import Form from '../Form/Form'
 
 
 //class component- use when its holding state
@@ -16,11 +17,23 @@ class App extends Component {
     }
   }
 
+  addIdea = (newIdea) => {
+    this.setState({ideas: [...this.state.ideas, newIdea]})
+  }
+
+  deleteIdea = (id) => {
+    const filteredIdeas = this.state.ideas.filter((idea) => {
+      return idea.id !== id
+    })
+    this.setState({ideas: filteredIdeas})
+  }
+
   render() {
     return (
       <div className='App'>
         <h1>Idea Box</h1>
-        <IdeaContainer ideas={this.state.ideas} name='Jason'/>
+        <Form addIdea={this.addIdea}/>
+        <IdeaContainer ideas={this.state.ideas} deleteIdea={this.deleteIdea}/>
       </div>
     )
   }
