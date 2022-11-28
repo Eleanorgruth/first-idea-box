@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import IdeaContainer from '../IdeaContainer/IdeaContainer'
 import Form from '../Form/Form'
-
+import Container from '@mui/material/Container';
 
 //class component- use when its holding state
 class App extends Component {
@@ -31,7 +31,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>Idea Box</h1>
         <Form addIdea={this.addIdea}/>
         <IdeaContainer ideas={this.state.ideas} deleteIdea={this.deleteIdea}/>
       </div>

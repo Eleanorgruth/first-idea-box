@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import './Form.css'
-
+import {TextField, Stack, Button, Container} from '@mui/material';
 class Form extends Component {
   constructor(props) {
     super()
@@ -25,38 +24,51 @@ class Form extends Component {
       id: Date.now(),
     }
     this.props.addIdea(newIdea)
+    this.setState({ 
+      movie: '', 
+      quote: '',
+      character: '',
+    })
   }
 
   render() {
     return (
-      <form>
-        <input
-          type='text'
-          placeholder='Movie'
-          name='movie'
-          value={this.state.movie}
-          onChange={(event) => this.handleChange(event)}
+      <Container sx={{backgroundColor:"#fff", p:2}}>
+        <h1>Idea Box</h1>
+
+        <Stack direction="row" justifyContent="center">
+        <TextField id="outlined-basic" label="Movie" variant="outlined" 
+         type='text'
+         name='movie'
+         value={this.state.movie}
+         onChange={(event) => this.handleChange(event)}
+         sx={{m:1}}
         />
-        <input
-          type='text'
-          placeholder='Quote'
-          name='quote'
-          value={this.state.quote}
-          onChange={(event) => this.handleChange(event)}
+        <TextField id="outlined-basic" label="Quote" variant="outlined" 
+         type='text'
+         name='quote'
+         value={this.state.quote}
+         onChange={(event) => this.handleChange(event)}
+         sx={{m:1}}
         />
-        <input
-          type='text'
-          placeholder='Character'
-          name='character'
-          value={this.state.character}
-          onChange={(event) => this.handleChange(event)}
+        <TextField id="outlined-basic" label="Character" variant="outlined" 
+         type='text'
+         name='character'
+         value={this.state.character}
+         onChange={(event) => this.handleChange(event)}
+         sx={{m:1}}
         />
-        <button
+   
+        <Button
+        variant="contained"
+        sx={{m:1}}
+
           onClick={(event) => this.submitIdea(event)}
         >
           Submit
-        </button>
-      </form>
+        </Button>
+        </Stack>
+        </Container>
     )
   }
 }
